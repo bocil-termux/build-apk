@@ -58,6 +58,7 @@ git clone https://github.com/bocil-termux/build-apk.git
 
 cd build-apk
 python3 setup.py
+python3 setup_tambahan.py
 python3 mulai.py
 ```
 
