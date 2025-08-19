@@ -1,2 +1,0 @@
-#!/data/data/com.termux/files/usr/bin/sh
-exec java -jar /data/data/com.termux/files/usr/share/java/apksigner.jar "$@"
