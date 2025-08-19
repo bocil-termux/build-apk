@@ -37,7 +37,7 @@ def main():
     # Install dependensi
     print("[*] Installing dependencies...")
     if shutil.which("pkg"):
-        run_cmd(["pkg", "install", "wget", "unzip", "openjdk-17", "-y"])
+        run_cmd(["pkg", "install", "wget", "unzip", "openjdk", "-y"])
     elif shutil.which("apt"):
         run_cmd(["apt", "update"], sudo=True)
         run_cmd(["apt", "install", "wget", "unzip", "openjdk-17", "-y"], sudo=True)
