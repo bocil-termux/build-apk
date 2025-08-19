@@ -4,17 +4,22 @@ import subprocess
 import sys
 import urllib.request
 import zipfile
+import argparse
 
-def run_cmd(cmd, sudo=False):
+def run_cmd(cmd, sudo=False, env=None):
     if sudo and shutil.which("sudo"):
         cmd.insert(0, "sudo")
     print(f"[*] Running: {' '.join(cmd)}")
-    subprocess.run(cmd, check=True)
+    subprocess.run(cmd, check=True, env=env)
 
 def file_exists(file_name):
     return shutil.which(file_name) is not None
 
 def main():
+    parser = argparse.ArgumentParser(description="Installer zipalign & apksigner")
+    parser.add_argument("--force", action="store_true", help="Force reinstall even if already installed")
+    args = parser.parse_args()
+
     # Deteksi lingkungan (Termux atau Linux biasa)
     if os.path.isdir("/data/data/com.termux/files/usr/bin"):
         bin_dir = "/data/data/com.termux/files/usr/bin"
@@ -24,8 +29,9 @@ def main():
         print("[*] Detected Linux environment")
 
     # Cek apakah sudah ada
-    if file_exists("zipalign") and file_exists("apksigner"):
+    if file_exists("zipalign") and file_exists("apksigner") and not args.force:
         print(f"[✓] zipalign & apksigner sudah terpasang di {bin_dir}")
+        print("    Gunakan --force untuk reinstall")
         sys.exit(0)
 
     # Install dependensi
@@ -42,6 +48,12 @@ def main():
     # Download command line tools
     url = "https://dl.google.com/android/repository/commandlinetools-linux-11076708_latest.zip"
     zip_path = os.path.join(sdk_dir, "cmdline-tools.zip")
+
+    if args.force and os.path.exists(sdk_dir):
+        print("[*] Removing old SDK directory...")
+        shutil.rmtree(sdk_dir, ignore_errors=True)
+        os.makedirs(os.path.join(sdk_dir, "cmdline-tools"), exist_ok=True)
+
     print("[*] Downloading Android SDK Command Line Tools...")
     urllib.request.urlretrieve(url, zip_path)
 
@@ -58,7 +70,7 @@ def main():
 
     # Install build-tools
     print("[*] Installing build-tools (zipalign & apksigner)...")
-    run_cmd(["yes", "|", "sdkmanager", "build-tools;34.0.0"], sudo=False)
+    run_cmd(["sdkmanager", "build-tools;34.0.0"], env=env)
 
     # Copy hasil ke bin
     src_dir = os.path.join(sdk_dir, "build-tools", "34.0.0")
