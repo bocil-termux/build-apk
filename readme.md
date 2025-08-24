@@ -56,7 +56,8 @@ Tools ini adalah alat canggih untuk mengkonversi proyek web (HTML/React) menjadi
 ```bash
 pkg update && pkg upgrade -y
 termux-setup-storage -y
-pkg install python3 git
+pkg install python3 git root-repo x11-repo
+termux-change-repo
 git clone https://github.com/bocil-termux/build-apk.git
 cd build-apk
 python3 setup.py
