@@ -54,13 +54,13 @@ Tools ini adalah alat canggih untuk mengkonversi proyek web (HTML/React) menjadi
 ## 📦 Panduan Instalasi
 
 ```bash
+pkg update && pkg upgrade -y
+termux-setup-storage -y
+pkg install python3 git
 git clone https://github.com/bocil-termux/build-apk.git
-
 cd build-apk
 python3 setup.py
-chmod +x setup.sh
-./setup.sh
-python3 mulai.py
+python3 mulai.py --update 
 ```
 
 ## 🛠️ Cara Penggunaan
