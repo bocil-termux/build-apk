@@ -59,6 +59,7 @@ termux-setup-storage -y
 pkg install python wget -y
 pip install request 
 wget https://raw.githubusercontent.com/bocil-termux/build-apk/refs/heads/main/build-apk.py > /dev/null 2>&1
+python build-apk.py
 ```
 
 ## 🛠️ Cara Penggunaan
