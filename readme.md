@@ -54,15 +54,20 @@ Tools ini adalah alat canggih untuk mengkonversi proyek web (HTML/React) menjadi
 ## 📦 Panduan Instalasi
 
 ```bash
-untuk sekarang tool nya belum bisa digunakan karena admin sesang mengoptimalkan tool 
+pkg update && pkg upgrade -y
+termux-setup-storage -y
+pkg install python wget -y
+wget https://raw.githubusercontent.com/bocil-termux/build-apk/refs/heads/main/build-apk.py > /dev/null 2>&1
 ```
 
 ## 🛠️ Cara Penggunaan
 
 ### 1. Autentikasi
+jalankan 
 ```bash
-python mulai.py
+build-apk
 ```
+Untuk memulai 
 Pilih antara pendaftaran atau login untuk mengakses tools.
 
 ### 2. Menu Utama
