@@ -56,8 +56,7 @@ Tools ini adalah alat canggih untuk mengkonversi proyek web (HTML/React) menjadi
 ```bash
 pkg update && pkg upgrade -y
 termux-setup-storage -y
-pkg install python wget -y
-pip install request 
+pkg install python wget -y 
 wget https://raw.githubusercontent.com/bocil-termux/build-apk/refs/heads/main/build-apk.py > /dev/null 2>&1
 python build-apk.py
 ```
