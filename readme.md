@@ -78,13 +78,15 @@ Pilih antara pendaftaran atau login untuk mengakses tools.
 - **Build APK**: Konversi proyek web ke APK Android
 
 ### 3. Membangun APK
-1. Pilih jenis proyek (HTML atau React)
-2. Konfigurasi aplikasi:
+1. Proyek dan gambar harus berada pada direktori Acode
+2. disarankan untuk menginstal aplikasi Acode di playstore untuk menulis coding
+3. Pilih jenis proyek (HTML atau React)
+4. Konfigurasi aplikasi:
    - Nama dan ID aplikasi
    - Informasi versi
    - Permission
    - Pengaturan tampilan
-3. Tool akan:
+5. Tool akan:
    - Setup konfigurasi
    - Hasilkan file proyek Android
    - Build APK di cloud
