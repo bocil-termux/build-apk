@@ -47,8 +47,8 @@ class BocilTools:
             return self.run_command("sudo apt-get install clang -y")
 
     def remove_build_apk(self):
-        if os.path.exists("build-apk.py"):
-            os.remove("build-apk.py")
+        if os.path.exists("setup-build-apk.py"):
+            os.remove("setup-build-apk.py")
         return True
 
     def compile_setup(self):
