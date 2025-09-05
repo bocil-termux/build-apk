@@ -68,7 +68,7 @@ jalankan
 ```bash
 build-apk
 ```
-Untuk memulai 
+Untuk memulai Tools /n
 Pilih antara pendaftaran atau login untuk mengakses tools.
 
 ### 2. Menu Utama
