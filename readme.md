@@ -51,6 +51,9 @@ Tools ini adalah alat canggih untuk mengkonversi proyek web (HTML/React) menjadi
   - Tipe build Debug/Release
   - ID aplikasi kustom
 
+## Harap Install Termux dari F-droid 
+https://f-droid.org/repo/com.termux_1002.apk
+
 ## 📦 Panduan Instalasi
 
 ```bash
